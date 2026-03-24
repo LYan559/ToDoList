@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                🎯 Kanban Board
+            </h1>
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input type="text" id="taskTitle" placeholder="Título da tarefa..." maxlength="100">
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="taskDescription" placeholder="Descrição (opcional)..." maxlength="200">
+                </div>
+                <button class="btn-add" id="addTaskBtn">
+                    ➕ Adicionar Tarefa
+                </button>
+            </div>
+            <div class="stats" id="statsContainer">
+                <!-- Estatísticas serão inseridas via JS -->
+            </div>
+        </div>
+
+        <div class="kanban-board">
+            <!-- Coluna: A Fazer -->
+            <div class="column column-todo" data-status="todo">
+                <div class="column-header">
+                    <h2>📝 A Fazer</h2>
+                    <span class="column-badge" id="todoCount">0</span>
+                </div>
+                <div class="tasks-container" id="todoTasks" data-status="todo"></div>
+            </div>
+
+            <!-- Coluna: Em Desenvolvimento -->
+            <div class="column column-progress" data-status="progress">
+                <div class="column-header">
+                    <h2>⚙️ Em Desenvolvimento</h2>
+                    <span class="column-badge" id="progressCount">0</span>
+                </div>
+                <div class="tasks-container" id="progressTasks" data-status="progress"></div>
+            </div>
+
+            <!-- Coluna: Concluído -->
+            <div class="column column-done" data-status="done">
+                <div class="column-header">
+                    <h2>✅ Concluído</h2>
+                    <span class="column-badge" id="doneCount">0</span>
+                </div>
+                <div class="tasks-container" id="doneTasks" data-status="done"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
